@@ -4,12 +4,22 @@ snippet !more "Read more tag"
 snippet tick "inline tick"
 	\`$1\`
 
-snippet ticks "backtick codeblock"
+snippet ticks "backtick codeblock simple"
+	\`\`\`
+	$1
+	\`\`\`
+
+snippet ticksall "backtick codeblock all options"
 	\`\`\` ${1:language} ${2:title} ${3:url} ${4:link_title}
 	$5
 	\`\`\`
 
-snippet block "blockquote tag plugin"
+snippet block "blockquote tag plugin simple"
+	{% blockquote  %}
+	$1
+	{% endblockquote %}
+
+snippet block "blockquote tag plugin all options"
 	{% blockquote ${1:author} ${2:link} ${3:link_title} %}
 	$4
 	{% endblockquote %}
@@ -19,12 +29,12 @@ snippet pull "pullquote tag plugin"
 	$2
 	{% endpullquote %}
 
-snippet code "code block tag plugin" b
+snippet code "code block tag plugin simple" b
 	{% codeblock lang:$1 ${2:title} %}
 	$3
 	{% endcodeblock %}
 
-snippet codeblock "code block tag plugin with all options"
+snippet codeblock "code block tag plugin all options"
 	{% codeblock lang:$1 ${2:line_number:false} ${3:highlight:false} ${4:title} ${5:url} ${6:link_title} %}
 	$7
 	{% endcodeblock %}
